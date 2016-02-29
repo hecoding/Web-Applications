@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Práctica 1</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>Datos Personales</legend>
+			<div class="ponerBonito">
+				Nombre <input type="text" required><br>
+				Apellidos <input type="text" required><br>
+				DNI <input type="text" minlength="9" maxlength="9" required><br>
+				Dirección <input type="text" required><br>
+				Teléfono <input type="tel"><br>
+				Email <input type="email" required><br>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Detalles del pedido</legend>
+			<div class="ponerBonito">
+				Primer plato <select name="primeros" id="primeros">
+					<option>Menestra de agricultura</option>
+					<option>Sopa castellano-leonesa</option>
+					<option>Salmorejo con ketchup</option>
+					<option>Paella de Huesca</option>
+					<option>Pan</option>
+				</select>
+				<br>
+				Segundo Plato <input type="text" list="segundos">
+				<datalist id="segundos">
+					<option value="Croquetas"></option>
+					<option value="Filete adobao"></option>
+					<option value="Cochinillo a la brasa"></option>
+				</datalist>
+				<br>
+				Ingredientes adicionales:
+				<input type="checkbox" name="ingrediente1">Pimentón
+				<input type="checkbox" name="ingrediente2">Sal Gorda
+				<input type="checkbox" name="ingrediente3">Patata asada
+				<br>
+				Postre <input type="text">
+				<br>
+				Prefiere: 
+				<input type="radio" name="dulce" value="azucar" checked>Azúcar
+				<input type="radio" name="dulce" value="sacarina">Sacarina
+				<br>
+				
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Encuesta</legend>
+			<div class="ponerBonito">
+				Edad <input type="number" max="999"><br>
+				Sexo: 
+				<input type="radio" name="sexo" value="hombre" checked>Masculino
+				<input type="radio" name="sexo" value="mujer">Femenino
+				<br>
+				Valoración <select name="valoracion" id="valoracion">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option selected>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				<br><br>
+				Observaciones<br>
+				<textarea name="observaciones" id="observaciones" cols="30" rows="4"></textarea>
+			</div>
+		</fieldset>
+		<input type="submit"> <input type="reset">
+	</form>
+</body>
