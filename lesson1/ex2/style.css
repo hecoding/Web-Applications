@@ -1,0 +1,13 @@
+legend {
+	text-align: center;
+	font-weight: bold;
+}
+
+fieldset {
+	text-align: center;
+}
+
+.ponerBonito {
+	text-align: right;
+	display: inline-block;
+}
