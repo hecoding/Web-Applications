@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+</head>
+<body>
+
+	<script type="text/javascript">
+		var num = prompt("Dame un número");
+		var m = Math.sqrt(num);
+		var primo = true;
+
+		for (var i = 2; i <= m; i++) {
+			if (num % i == 0) {
+				primo = false;
+				break;
+			}
+		}
+
+		if(primo) alert("es primo");
+		else alert("no es primo");
+	</script>
+
+</body>
+</html>
