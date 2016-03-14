@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<style>
+		.ponerBonito {
+        	text-align: right;
+        	display: inline-block;
+		}
+		.borde {
+			border: 1px solid black;
+			text-align: center;
+		}
+		fieldset {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function comprobarNoNumeros() {
+			var valido = true;
+			var nombre = document.formulario.nombre.value;
+
+			if(nombre == "") valido = false;
+			else {
+				for (var i = 0; i < nombre.length; i++) {
+					if(nombre[i] >= 0 || nombre[i] <= 9)
+						valido = false;
+				};
+			}
+
+			if(!valido) {
+				alert("Campo no válido");
+			}
+			else {
+				document.cosasBien.value = "nombrebien";
+			}
+		}
+	</script>
+	
+	<fieldset>
+		<legend>Formulario</legend><!-- LOS COMENTARIOS CREO QUE SON CON ATTRIB COMMENT --> 
+		<div class="ponerBonito">
+			<form action="" name="formulario">
+				Nombre <input type="text" name="nombre" onblur="comprobarNoNumeros()"><br>
+				Apellido <input type="text" name="apellido" onblur="comprobarNoNumeros()"><br>
+				NIF <input type="text" name="nif"><br>
+				Teléfono <input type="number" name="telefono" max="999999999"><br>
+				<fieldset>
+					<legend>Dirección</legend>
+					<select name="calle" id="calle" class="centrar">
+						<option value="calle">Calle</option>
+						<option value="avenida">Avenida</option>
+						<option value="plaza">Plaza</option>
+					</select><br>
+					Nombre <input type="text"><br>
+					Número y piso <input type="text">
+				</fieldset>
+				Email <input type="text"><br>
+				Fecha nacimiento <input type="date"><br>
+				<input type="radio" name="tramite"> Trámite 1<br>
+				<input type="radio" name="tramite"> Trámite 2<br>
+				<input type="radio" name="tramite"> Trámite 3<br>
+			</form>
+		</div>
+	</fieldset>
+
+	<fieldset name="cosasBien">
+		<legend>Cosas bien</legend>
+	</fieldset>
+</body>
+</html>
