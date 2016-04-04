@@ -35,7 +35,8 @@
 				alert("Campo no válido");
 			}
 			else {
-				document.cosasBien.value = "nombrebien";
+				document.getElementById("cosasBien").innerHTML += "nombre validado<br>";
+
 			}
 		}
 	</script>
@@ -67,7 +68,7 @@
 		</div>
 	</fieldset>
 
-	<fieldset name="cosasBien">
+	<fieldset id="cosasBien">
 		<legend>Cosas bien</legend>
 	</fieldset>
 </body>
