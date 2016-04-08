@@ -1,5 +1,5 @@
 # Web Applications
-Web development exercises of the web application subject taken at my faculty.   
+Web development exercises of the web applications subject taken at my faculty.   
 A significant amount of code has been written in spanish because is the language in which the course was teached.
 
 ##Syllabus:
