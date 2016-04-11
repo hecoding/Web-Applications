@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<meta charset="utf-8">
 <head>
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 
 		$(document).ready(function() {
-			$("#obligatorio").blur(comprobar);
+			$("form :button").click(function() {
+				alert('Ha hecho click en un botón');
+			});
+			$("form :submit").click(function() {
+				alert('Ha hecho click en el botón OK');
+			});
+			$("input[name='primero']").blur(function() {
+				if (!$("#obligatorio").val())
+					alert("El campo está vacío");
+			});
 		});
-
-		function comprobar() {
-			if (!$("#obligatorio").val())
-				alert("El primero está vacío");
-		}
 
 	</script>
 </head>
 
 <body>
 	<form>
-		<input  type="text" id="obligatorio" required> </input>
-		<input type="text" id="segundo" > </input>
+		<input type="text" name="primero" required> </input>
+		<input type="text" name="segundo" > </input>
 		<button type="submit" id="submit">submit</button>
 		<button type="reset" id="reset">reset</button>
 	</form>
