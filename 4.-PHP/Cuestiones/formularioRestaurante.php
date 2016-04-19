@@ -10,25 +10,20 @@
 			<label for="platos">Elige plato</label>
 			
 			<?php
-				$host="localhost";
-				$usuario="root";
-				$contrasenha="";
-				$nombre_db="restaurante";
-				$conexion=mysqli_connect($host, $usuario, $contrasenha, $nombre_db);
+				require_once ("conexionRestaurante.php");
+
+				$db = new DB();
+				echo $db->msg();
+				$conection = $db->conectar();
 				
-				if(!$conexion){
-					echo "conexion mala";
-					exit;
-				}
-	
 				$sql='SELECT * FROM DISPONIBLE';	
-				$consulta=mysqli_query($conexion, $sql);
+				$consulta=mysqli_query($conection, $sql);
 				echo "<select>";
 				while($fila=mysqli_fetch_assoc($consulta)){
 					echo "<option>",$fila['platos'],"</option>";
 				}
 				echo"</select>";
-				mysqli_close($conexion);
+				$db->desconectar();
 			?>
 			
 		</form>
