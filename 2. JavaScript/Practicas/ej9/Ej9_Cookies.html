@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="Ej9_Style.css">
+	<script type="text/javascript" src="Ej9_Script.js"></script>
+</head>
+
+<body onload="checkCookie()">
+	<fieldset>
+		<legend>Formulario</legend>
+		<div class="ponerBonito">
+			<form action="" name="formulario">
+				<label for="name">Nombre</label>
+				<input type="text" name="name" id="nombre" onblur="comprobarNoNumeros('Nombre')"
+				onmouseover="mouseOverName()" onmouseout="mouseOut()"><br>
+				Apellido <input type="text" name="apellido" onblur="comprobarNoNumeros('Apellido')"
+				onmouseover="mouseOverApellido()" onmouseout="mouseOut()"><br>
+				NIF <input type="text" name="nif" onblur="NIFCorrecto()"
+				onmouseover="mouseOverNIF()" onmouseout="mouseOut()"><br>
+				Teléfono <input type="number" name="telefono" max="999999999" onblur="comprobarTelefono()"
+				onmouseover="mouseOverTelefono()" onmouseout="mouseOut()"><br>
+				<fieldset>
+					<legend>Dirección</legend>
+              <div class="ponerBonito">
+                  <label for="calle">Tipo</label>
+        					<select name="calle" id="calle" class="centrar">
+        						<option value="calle">Calle</option>
+        						<option value="avenida">Avenida</option>
+        						<option value="plaza">Plaza</option>
+        					</select><br>
+        					Nombre <input type="text"><br>
+        					Número <input type="number" min=0 ><br>
+                  Piso <input type="number" min=0 ><br>
+            </div>
+				</fieldset>
+				Email <input type="mail" name="mail" onblur="comprobarEmail()"><br>
+				Fecha nacimiento <input type="date" name="fecha" onblur="comprobarFecha()"><br>
+				<input type="radio" name="tramite"> Trámite 1<br>
+				<input type="radio" name="tramite"> Trámite 2<br>
+				<input type="radio" name="tramite"> Trámite 3<br>
+
+        <!-- Datos pedido-->
+        <fieldset>
+          <div class="ponerBonito">
+          <label for="primero">Primero</label>
+  				<input type="text" name="primero"><br>
+          <label for="segundo">Segundo</label>
+  				<input type="text" name="segundo"><br>
+          <label for="postre">Postre</label>
+  				<input type="text" name="postre"><br>
+          <label for="entrega">Forma de entrega:</label><br>
+		            <input type="radio" name="entrega" checked="true"
+		            onclick="cambiarOpciones(0)"> Entrega a domicilio
+		    				<input type="radio" name="entrega"
+		            onclick="cambiarOpciones(1)"> Recogida en restaurante<br>
+          <label for="picante">Nivel de picante</label><br>
+          <select id="picante" class="centrar">
+            <option value="nulo">Nulo</option>
+            <option value="bajo">Bajo</option>
+          </select><br>
+          <label for="sugerencia">Dejanos aquí tus sugerencias</label><br>
+  				<textarea name="sugerencia" id="sugerencia" max="75" cols="25"
+          rows="3" name="texto" onKeyDown="cuenta()" onKeyUp="cuenta()">
+        </textarea>
+          <p name=caracteres id="caracteres"></p>
+        </div><br>
+
+        <input type="submit" value="Enviar" onclick="registrarDatos()">
+				<input type="reset" value="Restablecer">
+
+        </fieldset>
+			</form>
+		</div>
+	</fieldset>
+
+	<fieldset id="cosasBien">
+		<legend>Feedback</legend>
+	</fieldset>
+
+	<fieldset>
+		<legend>Ayuda</legend>
+		<p id ="ayuda">
+	</fieldset>
+
+</body>
+</html>

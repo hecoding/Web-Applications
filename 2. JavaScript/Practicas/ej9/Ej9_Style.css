@@ -1,0 +1,11 @@
+.ponerBonito {
+  text-align: right;
+  display: inline-block;
+}
+.borde {
+  border: 1px solid black;
+  text-align: center;
+}
+fieldset {
+  text-align: center;
+}
