@@ -39,13 +39,21 @@
 
 			}
 		}
+
+		function ayudaNombre() {
+			document.getElementById("campo_ayuda").innerHTML = "Introduce tu nombre";
+		}
+
+		function limpiarAyuda() {
+			document.getElementById("campo_ayuda").innerHTML = "";
+		}
 	</script>
 	
 	<fieldset>
 		<legend>Formulario</legend><!-- LOS COMENTARIOS CREO QUE SON CON ATTRIB COMMENT --> 
 		<div class="ponerBonito">
 			<form action="" name="formulario">
-				Nombre <input type="text" name="nombre" onblur="comprobarNoNumeros()"><br>
+				Nombre <input type="text" name="nombre" onmouseover="ayudaNombre()" onmouseout="limpiarAyuda()" onblur="comprobarNoNumeros()"><br>
 				Apellido <input type="text" name="apellido" onblur="comprobarNoNumeros()"><br>
 				NIF <input type="text" name="nif"><br>
 				Teléfono <input type="number" name="telefono" max="999999999"><br>
@@ -70,6 +78,11 @@
 
 	<fieldset id="cosasBien">
 		<legend>Cosas bien</legend>
+	</fieldset>
+
+	<fieldset>
+		<legend>Ayuda</legend>
+		<p id="campo_ayuda"></p>
 	</fieldset>
 </body>
 </html>
